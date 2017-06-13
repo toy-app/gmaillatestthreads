@@ -1,0 +1,56 @@
+{
+  "name": "gmaillatestthreads",
+  "version": "0.0.1",
+  "description": "Gmail latest threads",
+  "main": "dist",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "prestart": "npm run -s build",
+    "start": "NODE_ENV=production pm2 start dist",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toy-app/gmaillatestthreads.git"
+  },
+  "author": "Prasanna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toy-app/gmaillatestthreads/issues"
+  },
+  "homepage": "https://github.com/toy-app/gmaillatestthreads#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^19.0.0",
+    "js-base64": "^2.1.9",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.5",
+    "multiparty": "^4.1.3",
+    "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "stream": "0.0.2",
+    "stream-stream": "^1.2.6",
+    "string-template": "^1.0.0",
+    "util": "^0.10.3"
+  }
+}
