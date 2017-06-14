@@ -15,7 +15,7 @@ app.use(bodyParser.json({
 
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'src/views'));
+app.set('views', path.join(__dirname, 'views'));
 app.use(cookie())
 // app.use(express.static(path.join(__dirname, 'src/public')));
 // app.use(express.static(path.join(__dirname, 'public')));

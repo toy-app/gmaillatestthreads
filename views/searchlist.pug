@@ -1,0 +1,14 @@
+html
+	head
+		title='Search Results'
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css')
+	body
+		button(type='button' onclick='back()' class='button is-hovered') Back
+		ul(class="card")
+			each doc in docs
+				each msg in doc.message
+					li(class="card-content")=msg
+		script.
+			function back(){
+				window.history.back()
+			}

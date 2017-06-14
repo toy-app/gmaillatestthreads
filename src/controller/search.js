@@ -20,12 +20,15 @@ export default({ config, db}) => {
 		.limit(10)
 		.exec(function(err, docs) { 
 			if(err){
-				console.log('hhhhjhkjkhkh', err)
+				console.log('hhhhjhkjkhkh', err);
 				res.json({
 				docs
 			});
 			}
-			res.json({
+			// res.json({
+			// 	docs
+			// });
+			res.render('searchlist.pug', {
 				docs
 			});
 		});
