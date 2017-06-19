@@ -5,7 +5,7 @@ import dbconn from '../db';
 import path  from 'path';
 import search from '../controller/search';
 import list from '../controller/list';
-import savetoken from '../controller/savetoken';
+import token from '../controller/token';
 
 let router = express();
 
@@ -14,7 +14,7 @@ let router = express();
 dbconn(db => {
 	router.use(middleware({ config, db }));
 	router.use('/search', search({ config, db }));
-	router.use('/savetoken', savetoken({ config, db }));
+	router.use('/token', token({ config, db }));
 	router.use('/', list({ config, db }));
 });
 

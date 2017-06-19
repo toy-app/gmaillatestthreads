@@ -6,7 +6,7 @@ import cookie from 'cookie-parser';
 
 
 function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
 export default({ config, db}) => {
@@ -20,19 +20,17 @@ export default({ config, db}) => {
 		.limit(10)
 		.exec(function(err, docs) { 
 			if(err){
-				console.log('hhhhjhkjkhkh', err);
 				res.json({
-				docs
-			});
+					docs
+				});
 			}
-			// res.json({
-			// 	docs
-			// });
 			res.render('searchlist.pug', {
 				docs
 			});
 		});
-
+	});
+	return api;
+	};
 
 
 		// Messages.find({'data.message': searchtext},
@@ -118,6 +116,3 @@ export default({ config, db}) => {
 
 
 
-	});
-	return api;	
-};
